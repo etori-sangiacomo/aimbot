@@ -1,0 +1,27 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  host: localhost
+  username: postgres
+  password: postgres
+  port: 5432
+
+development:
+  <<: *default
+  database: secret_friend_development
+
+test:
+  <<: *default
+  database: secret_friend_test
+
+production:
+  <<: *default
+  database: secret_friend_production
+
+
+  # production:
+  # <<: *default
+  # database: <%= ENV['RDS_DATABASE'] %>
+  # username: <%= ENV['RDS_USERNAME'] %>
+  # password: <%= ENV['RDS_PASSWORD'] %>
+  # host: <%= ENV['RDS_HOST'] %>
